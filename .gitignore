@@ -3,6 +3,8 @@ vim/plug/*
 vim/plugged/*
 vim/undo/*
 
+zsh/zsh_history
 zsh/fzf/*
 zsh/zplug/*
 
+!.gitkeep
