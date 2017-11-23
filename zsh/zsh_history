@@ -374,3 +374,4 @@ if __name__ == "__main__":\
 : 1511442092:0;gps
 : 1511442114:0;git status
 : 1511442126:0;gc -am 'Modify install.sh for Linux'
+: 1511442819:0;bash
