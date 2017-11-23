@@ -360,3 +360,17 @@ if __name__ == "__main__":\
 : 1511440962:0;v .gitignore
 : 1511441034:0;git init
 : 1511441042:0;git add .
+: 1511441046:0;gs
+: 1511441066:0;which gm
+: 1511441075:0;v .zshrc
+: 1511441083:0;v zsh/zshrc
+: 1511441115:0;v zsh/rc/zshrc.alias 
+: 1511441140:0;gc -m 'init commit'
+: 1511441248:0;git remote add origin https://528dai@bitbucket.org/528dai/dotfiles.git
+: 1511441264:0;v zsh/rc/zshrc.alias 
+: 1511441281:0;gps -u origin master
+: 1511441616:0;vim install.sh
+: 1511442084:0;gc -m 'Modify install.sh for Linux'
+: 1511442092:0;gps
+: 1511442114:0;git status
+: 1511442126:0;gc -am 'Modify install.sh for Linux'
