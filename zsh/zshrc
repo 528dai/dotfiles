@@ -1,0 +1,104 @@
+# Initialize
+export ZSH_ROOT=~/dotfiles/zsh
+
+if [ ! -f ~/.zshrc.zwc -o ~/.zshrc -nt ~/.zshrc.zwc ]; then
+    zcompile ~/.zshrc
+fi
+
+export FZF_ROOT=$ZSH_ROOT/fzf
+if [[ ! -d $FZF_ROOT ]];then
+    git clone --depth 1 https://github.com/junegunn/fzf.git $FZF_ROOT
+    $FZF_ROOT/install
+fi
+
+export ZPLUG_ROOT=$ZSH_ROOT/zplug
+export ZPLUG_HOME=$ZPLUG_ROOT  # fzf 側の都合で
+if [[ ! -d $ZPLUG_ROOT ]];then
+    git clone https://github.com/zplug/zplug $ZPLUG_ROOT
+fi
+source $ZPLUG_ROOT/init.zsh
+
+
+# Plugins
+zplug 'mafredri/zsh-async'
+zplug "chrissicool/zsh-256color"
+
+zplug "zsh-users/zsh-completions",              defer:0
+zplug "zsh-users/zsh-autosuggestions",          defer:2, on:"zsh-users/zsh-completions"
+zplug "zsh-users/zsh-syntax-highlighting",      defer:3, on:"zsh-users/zsh-autosuggestions"
+zplug "zsh-users/zsh-history-substring-search", defer:3, on:"zsh-users/zsh-syntax-highlighting"
+
+zplug "b4b4r07/enhancd", use:init.sh
+
+# Theme
+zplug 'sindresorhus/pure', on:'mafredri/zsh-async', use:pure.zsh, as:theme
+
+
+# Install plugins if there are plugins that have not been installed
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+
+# Then, source plugins and add commands to $PATH
+zplug load --verbose
+#########################################################
+
+
+# 環境変数
+source $ZSH_ROOT/rc/zshrc.env
+
+# 補完
+source $ZSH_ROOT/rc/zshrc.complement
+
+# History
+source $ZSH_ROOT/rc/zshrc.history
+
+# Alias
+source $ZSH_ROOT/rc/zshrc.alias
+
+
+#########################################################
+## その他設定 {{{1
+# プロンプトの色表示を有効にする
+autoload -U colors
+colors
+
+# cdを省略する
+setopt auto_cd
+
+# cdの後にlsを実行
+chpwd() { ls -G }
+
+# mkdirとcdを同時実行
+function mkcd() {
+    if [[ -d $1 ]]; then
+        echo "$1 already exists!"
+        cd $1
+    else
+        mkdir -p $1 && cd $1
+    fi
+}
+
+[ `uname` = "Linux" ] && alias open='xdg-open 2>/dev/null'
+function myopen() {
+  if [ $# -ne 0 ]; then
+    open "$@"
+  else
+    open .
+  fi
+}
+
+# Emacs風のキーバインド
+bindkey -e
+
+# 実行時間が長いコマンドは秒数を表示する
+REPORTTIME=3
+## }}}1
+
+
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+

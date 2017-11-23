@@ -1,0 +1,8 @@
+vim/info/*
+vim/plug/*
+vim/plugged/*
+vim/undo/*
+
+zsh/fzf/*
+zsh/zplug/*
+

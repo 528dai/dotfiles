@@ -1,0 +1,362 @@
+: 1510247902:0;rm -f ~/.zcompdump; compinit
+: 1510247907:0;ls -a
+: 1510247974:0;cd .config/fish/config.fish
+: 1510247980:0;cd .config/fish/
+: 1510247984:0;vim config.fish
+: 1510248299:0;//
+: 1510248626:0;cat -v
+: 1510248684:0;[A
+: 1510248697:0;
+: 1510249248:0;print -l $fpath
+: 1510249271:0;brew uninstall site-function
+: 1510249595:0;ls -ltr
+: 1510249862:0;cd dein.log
+: 1510250009:0;cd Desktop
+: 1510318483:0;mv alias.zshrc .zshrc.alias
+: 1510318520:0;mv .zshrc.alias zshrc.alias
+: 1510318522:0;vim .zshrc.alias
+: 1510319235:0;**
+: 1510320717:0;fzf
+: 1510320899:0;fzf-history-widget
+: 1510321783:0;cd dotfiles/zsh/zplug/
+: 1510321787:0;ls repos
+: 1510321797:0;cd repos/junegunn
+: 1510321802:0;cd fzf-bin/fzf-bin
+: 1510321805:0;cd fzf-bin
+: 1510322631:0;cd dotfiles/zsh/zplug
+: 1510322678:0;echo $ZSH_ROOT
+: 1510322685:0;echo $ZPLUG_ROOT
+: 1510322770:0;echo $ZPLUG_ROOT/init.sh
+: 1510322774:0;vim $ZPLUG_ROOT/init.sh
+: 1510322787:0;cd $ZPLUG_ROOT/
+: 1510322808:0;which zlug
+: 1510322810:0;which zplug
+: 1510322825:0;zplug check
+: 1510322978:0;rm .z
+: 1510322982:0;rm .zplug
+: 1510323032:0;rm -rf .zplug
+: 1510323177:0;cd .config/fish
+: 1510323184:0;ls conf.d
+: 1510323190:0;vim conf.d
+: 1510323196:0;vi config.fish
+: 1510323403:0;rm -rf fish
+: 1510323407:0;rm -rf fisherman
+: 1510323426:0;rm dein.log
+: 1510323458:0;vim .fzf.zsh
+: 1510323717:0;cd dotfiles/zsh/
+: 1510323767:0;cd -
+: 1510323820:0;vim zshrc.complement 
+: 1510324060:0;cat -vç
+: 1510324110:0; fzf-cd-widget
+: 1510324640:0;cd $ZSH_ROOT
+: 1510324663:0;vim zshrc.env zshrc.history zshrc.alias zshrc.complement 
+: 1510324729:0;nkf
+: 1510324734:0;which nkf
+: 1510324755:0;nkf zshrc.env zshrc.alias zshrc.complement 
+: 1510324763:0;nkf -Ew zshrc.env zshrc.alias zshrc.complement 
+: 1510324791:0;vim zshrc.complement
+: 1510324796:0;vim zshrc.alias
+: 1510324811:0;vim zshrc.env
+: 1510324912:0;rm .vimrc\~
+: 1510325022:0;cd dotfiles/zsh
+: 1510325030:0;mkdir rc
+: 1510325061:0;vim zshrc.history
+: 1510325074:0;mv zshrc.* rc
+: 1510325077:0;ls rc
+: 1510325082:0;vi ~/.zshrc
+: 1510325090:0;vim ~/.zshrc
+: 1510325428:0;cp .vim dotfiles/vim
+: 1510325433:0;cp -r .vim dotfiles/vim
+: 1510325440:0;cd dotfiles/vim
+: 1510325656:0;cd dotfiles/zsh/rc/zshrc.env 
+: 1510329339:0;zcompile ~/.zshrc
+: 1510334638:0;cd dotfiles/vim/rc
+: 1510334641:0;curl https://raw.githubusercontent.com/haya14busa/.vim/master/rc/option.vim
+: 1510334663:0;wget https://raw.githubusercontent.com/haya14busa/.vim/master/rc/option.vim
+: 1510337019:0;cd ../
+: 1510337026:0;rm -rf autoload
+: 1510337099:0;cd ftplugin
+: 1510337104:0;vim vim.vim
+: 1510340781:0;cd .vim/rc/plugins
+: 1510343256:0;fnameescape(g:rc_dir . '/' . a:path)
+: 1510343260:0;fnameescape
+: 1510344185:0;rm -r dotfiles/vim/.dein
+: 1510344619:0;cd dotfiles/vim/.dein
+: 1510344629:0;cd repos/github.com/Shougo/dein.vim
+: 1510344876:0;:
+: 1510345020:0;rm -rf dotfiles/vim/.dein
+: 1510346326:0;sudo vim dotfiles/vim/rc/plug.vim 
+: 1510346472:0;curl -fLo ~/dotfiles/vim/plug/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+: 1510349546:0;rm -rf .config/fish
+: 1510349557:0;rm -rf .cache/dein
+: 1510349563:0;rm -rf .cache/fish
+: 1510349574:0;rm -rf .cache/fisherman
+: 1510349579:0;rm -rf .cache/ctrlp
+: 1510349759:0;brew uninstall fish
+: 1510349777:0;brew remove
+: 1510349783:0;brew clear
+: 1510349812:0;brew autoremove
+: 1510349835:0;brew cleanup
+: 1510366767:0;ag
+: 1510465304:0;mv .vim vim
+: 1510465447:0;vim dotfiles/vim/dotfiles/vim/rc/option.vim 
+: 1510465461:0;vim dotfiles/vim/rc/option.vim
+: 1510508728:0;myopen
+: 1510508735:0;open Desktop
+: 1510508744:0;echo 
+: 1510508746:0;echo o
+: 1510508750:0;which o
+: 1510508772:0;open
+: 1510508782:0;open .
+: 1510508837:0;o
+: 1510508842:0;which myopen
+: 1510508868:0;cp ../../compress_pdf.sh .
+: 1510508875:0;./compress_pdf.sh ito_rinko_hosoku_20171113.pdf
+: 1510508892:0;./compress_pdf.sh 2016_Anatomographic\ Volumetric\ Skin-Musculoskeletal\ Model\ and\ Its\ Kinematic\ Deformation\ With\ Surface-Based\ SSD.pdf
+: 1510508927:0;./compress_pdf.sh 20.pdf
+: 1510534538:0;vim dotfiles/vim/rc/plug.vim 
+: 1510535936:0;vim dotfiles/vim/rc/plugins
+: 1510537561:0;pip3 install neovim
+: 1510538387:0;cp dotfiles/vim/rc/plugins.vim dotfiles/vim/rc/plugins.vim.bak
+: 1510538389:0;vim dotfiles/vim/rc/plugins.vim
+: 1510541187:0;vim Core.sv
+: 1510544869:0;touch titile_v1.txt
+: 1510544872:0;open titile_v1.txt
+: 1510582260:0;cd dotfiles
+: 1510582265:0;touch install.sh
+: 1510582507:0;mv .vimrc Desktop/vimrc
+: 1510582515:0;mv .zshrc Desktop/zshrc
+: 1510582673:0;chmod 755 ./install.sh
+: 1510582676:0;./install.sh
+: 1510583050:0;ls ~
+: 1510583054:0;la ~
+: 1510583220:0;which ~/.vimrc
+: 1510583231:0;vim install.sh
+: 1510583245:0;vim ~/.vimrc
+: 1510583344:0;dotfiles/install.sh
+: 1510583499:0;mkdir .config/nvim
+: 1510583500:0;ln dotfiles/vim/vimrc .config/nvim/init.vim
+: 1510583592:0;ln -sf dotfiles/vim/vimrc .vimrc
+: 1510583594:0;vim .vimrc
+: 1510583725:0;vim .zshrc
+: 1510583742:0;ln -sf dotfiles/zsh/zshrc .zshrc
+: 1510583755:0;vim dotfiles/install.sh
+: 1510584415:0;echo $XDG_DATA_HOME
+: 1510584490:0;ls
+: 1510584901:0;cd projects/RSD/Processor/Src
+: 1510585540:0;nvim dotfiles/vim/rc/plug.vim 
+: 1510586286:0;nvim dotfiles/vim/rc/plugins/neosnippet.vim
+: 1510586412:0;nvim test.c
+: 1510586703:0;nvim Main.sv
+: 1510587014:0;nvim .vimrc
+: 1510587336:0;nvim .gvimrc
+: 1510587697:0;mv .gvimrc dotfiles/vim/rc/gui.vim
+: 1510587865:0;brew install macvim
+: 1510587909:0;vim version
+: 1510587922:0;nvim -V
+: 1510587933:0;nvim --version
+: 1510587942:0;gvim --version
+: 1510591672:0;nvim dotfiles/install.sh 
+: 1510591701:0;ln -sf ~/dotfiles/vim ~/.vim\
+
+: 1510591779:0;vim dotfiles/zsh/rc/zshrc.env 
+: 1510591816:0;nvim .zshrc
+: 1510591871:0;la
+: 1510591884:0;ll
+: 1510591893:0;ls vim
+: 1510591899:0;rm -rf vim
+: 1510591903:0;nvim
+: 1510591906:0;l
+: 1510592040:0;mvim -v
+: 1510592090:0;vim alias.zshrc
+: 1510592152:0;brew install macvim --with-override-system-vim --with-python3
+: 1510592279:0;which n
+: 1510592296:0;which v
+: 1510592326:0;fg
+: 1510592346:0;mvim --version
+: 1510592362:0;vim --version
+: 1510592411:0;vim -h
+: 1510592440:0;mvim
+: 1510592442:0;vim
+: 1510592449:0;vi -h
+: 1510592501:0;\vim -h | grep gui
+: 1510592627:0;\vim -h 
+: 1510592667:0;which nvim
+: 1510592672:0;vim g
+: 1510592686:0;\vim -g
+: 1510593263:0;gvim
+: 1510593280:0;vi -g
+: 1510593303:0;gvim../gvim
+: 1510593315:0;which gvim
+: 1510593323:0;/Applications/MacVim.app../
+: 1510593328:0;/Applications/MacVim.app/../
+: 1510593332:0;q
+: 1510593405:0;vi -v
+: 1510593409:0;vi -V
+: 1510593438:0;vi -verson
+: 1510593444:0;vi --verson
+: 1510593447:0;vi --version
+: 1510593476:0;brew uninstall macvim
+: 1510593496:0;brew install macvim  --with-python3
+: 1510593613:0;which mvim
+: 1510593659:0;source .zshrc
+: 1510593663:0;vim dotfiles/zsh/rc/zshrc.alias 
+: 1510593683:0;gvim dotfiles/zsh/rc/zshrc.alias 
+: 1510677141:0;rm -rf /usr/local/include/python3.6m/greenlet/greenlet.h
+: 1510677146:0;brew doctor
+: 1510892290:0;nvim dotfiles/vim/rc/plugins.vim
+: 1510896463:0;v dotfiles/vim/rc/mappings.vim
+: 1510927066:0;vim Main.sv
+: 1510927221:0;which \vim
+: 1510927225:0;\vim
+: 1510927237:0;vim /Users/dai/dotfiles/zsh/rc/zshrc.alias 
+: 1510927263:0;source ~/.zshrc
+: 1510927271:0;which vim
+: 1510927279:0;which vi
+: 1510965552:0;vi
+: 1511149901:0;arp
+: 1511149903:0;arp -a
+: 1511231723:0;brew update && brew upgrade && brew cleanup && brew doctor
+: 1511420211:0;cd
+: 1511420238:0;..
+: 1511420252:0;cd plugged/YouCompleteMe
+: 1511420255:0;./install.py --clang-completer
+: 1511420462:0;cdd
+: 1511422358:0;pip3 install jedi
+: 1511422364:0;pip install jedi
+: 1511422734:0;brew install silver
+: 1511422786:0;xcode-select --install
+: 1511422936:0;brew install the_silver_searcher
+: 1511422958:0;which ag
+: 1511423483:0;v a.c
+: 1511423487:0;v a.cpp
+: 1511424231:0;pip3 install flake8,
+: 1511424233:0;pip3 install flake8
+: 1511424755:0;v dotfiles/vim/rc/plug.vim
+: 1511425195:0;v .vimrc
+: 1511432848:0;v --version
+: 1511432860:0;v -v
+: 1511433122:0;./o.py
+: 1511435053:0;lldb
+: 1511435062:0;which lldb
+: 1511435074:0;brew help
+: 1511435082:0;brew search lldb
+: 1511435111:0;brew install lldb
+: 1511436191:0;v dotfiles/vim/plugged
+: 1511436202:0;cd  dotfiles/vim/plugged
+: 1511436208:0;cd YouCompleteMe
+: 1511436333:0;dotfiles/vim/plugged/YouCompleteMe dotfiles/vim/plugged/YouCompleteMe/ci 
+: 1511436337:0;dotfiles/vim/plugged/YouCompleteMe dotfiles/vim/plugged/YouCompleteMe/
+: 1511436340:0;cd dotfiles/vim/plugged/YouCompleteMe dotfiles/vim/plugged/YouCompleteMe/
+: 1511436342:0;./install.py --clang-completer --system-libclang --system-boost
+: 1511436363:0;./install.py --clang-completer --system-libclang 
+: 1511438409:0;v dotfiles/vim/rc/plugins.vim
+: 1511439354:0;python
+: 1511439470:0;if __name__ == "__main__":\
+    main()\
+# -*- coding: utf-8 -*-\
+\
+\
+def main():\
+    print("Hello world")\
+\
+\
+if __name__ == "__main__":\
+    main()
+: 1511439510:0;# -*- coding: utf-8 -*-
+: 1511439510:0;def main():
+: 1511439510:0;    print("Hello world")
+: 1511439543:0;if __name__ == "__main__":\
+    main()\
+# -*- coding: utf-8 -*-\
+\
+\
+def main():\
+    print("Hello world")\
+\
+\
+if __name__ == "__main__":\
+    main()\
+# -*- coding: utf-8 -*-\
+\
+\
+def main():\
+    print("Hello world")\
+\
+\
+if __name__ == "__main__":\
+    main()\
+# -*- coding: utf-8 -*-\
+\
+\
+def main():\
+    print("Hello world")\
+\
+\
+if __name__ == "__main__":\
+    main()\
+# -*- coding: utf-8 -*-\
+\
+\
+def main():\
+    print("Hello world")\
+\
+\
+if __name__ == "__main__":\
+    main()\
+:q
+: 1511439545:0;:q
+: 1511439629:0;v Main.sv
+: 1511439693:0;vi Main.sv
+: 1511439796:0;v o.py
+: 1511439880:0;rm o.py
+: 1511439891:0;ssh dai@raspberrypi.local -p 22222
+: 1511440021:0;cd dotfiles
+: 1511440027:0;ls vim
+: 1511440033:0;ls zsh/
+: 1511440322:0;cd zsh
+: 1511440328:0;vim .gitignore
+: 1511440359:0;cd ../vim
+: 1511440367:0;vim .gitignore
+: 1511440404:0;..
+: 1511440425:0;git init
+: 1511440434:0;git status
+: 1511440441:0;git add .
+: 1511440442:0;git status
+: 1511440496:0;git rm vim/.netrwhist*
+: 1511440499:0;git status
+: 1511440503:0;git rm vim/.netrwhist*
+: 1511440509:0;git rm -f vim/.netrwhist*
+: 1511440512:0;git status
+: 1511440609:0;vim vim/.gitignore
+: 1511440628:0;vim .gitignore
+: 1511440693:0;cd vim
+: 1511440697:0;rm .gitignore
+: 1511440700:0;cd ..
+: 1511440709:0;cd zsh
+: 1511440713:0;rm .gitignore
+: 1511440740:0;cd vim
+: 1511440741:0;la
+: 1511440744:0;:q
+: 1511440748:0;cd ../zsh
+: 1511440751:0;la
+: 1511440755:0;rm .gitignore
+: 1511440757:0;ls
+: 1511440767:0;v ~/.zshrc
+: 1511440815:0;source ~/.zshrc
+: 1511440821:0;ls
+: 1511440822:0;la
+: 1511440832:0;v .zsh_history
+: 1511440855:0;v zsh_history
+: 1511440865:0;rm .zsh_history
+: 1511440868:0;cd
+: 1511440871:0;..
+: 1511440877:0;git status
+: 1511440895:0;git rm vim/.gitignore
+: 1511440900:0;git rm zsh/.gitignore
+: 1511440903:0;git add .
+: 1511440912:0;git rm .git
+: 1511440918:0;rm -rf .git
+: 1511440962:0;v .gitignore
+: 1511441034:0;git init
+: 1511441042:0;git add .
