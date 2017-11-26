@@ -3,7 +3,7 @@
 "" Fonts: "{{{
 set ambiwidth=double
 
-set guifont=Source\ Han\ Code\ JP:h14
+set guifont=Source\ Han\ Code\ JP:h15
 
 set background=dark
 "colorscheme hybrid_reverse
