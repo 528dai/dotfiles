@@ -8,20 +8,24 @@ endif
 
 call plug#begin(g:vim_root . '/plugged')
 
-Plug 'junegunn/fzf', { 'do': 'yes \| ./install' }
-Plug 'junegunn/fzf.vim'
-Plug 'junegunn/vim-peekaboo'
-
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
   Plug 'critiqjo/lldb.nvim', { 'do': ':UpdateRemotePlugins' }
 elseif has('python3')
   Plug 'Shougo/deoplete.nvim'
+  Plug 'Shougo/denite.nvim'
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
 
 if has('nvim') || has('python3')
+  Plug 'Shougo/neoyank.vim'
+  Plug 'Shougo/neomru.vim'
+  Plug 'Shougo/unite-outline'
+  Plug 'pocari/vim-denite-command-history'
+  Plug 'nixprime/cpsm',  { 'do': 'env PY3=ON ./install.sh'}
+
   Plug 'zchee/deoplete-clang', { 'for': ['c', 'cpp'] }
   Plug 'zchee/deoplete-jedi', { 'for': 'python' }
 endif
@@ -42,6 +46,8 @@ Plug 'easymotion/vim-easymotion'
 Plug 'rhysd/accelerated-jk'
 Plug 'osyo-manga/vim-jplus'
 Plug 'tyru/caw.vim'
+
+Plug 'tyru/open-browser.vim'
 
 Plug 'w0ng/vim-hybrid'
 Plug 'kristijanhusak/vim-hybrid-material'

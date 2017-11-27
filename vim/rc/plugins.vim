@@ -5,10 +5,11 @@ function! s:source(path) abort " {{{
   execute 'source ' . s:rc_plugin_dir . '/' . a:path
 endfunction " }}}
 
-call s:source('fzf.vim')
+" call s:source('fzf.vim')
 
 if has('nvim') || has('python3')
   call s:source('deoplete.vim')
+  call s:source('denite.vim')
 endif
 
 call s:source('neosnippet.vim')
@@ -34,6 +35,7 @@ let g:gitgutter_map_keys = 0
 call s:source('easymotion.vim')
 
 " accelerated-jk {{{
+let g:accelerated_jk_enable_deceleration = 1
 nmap <silent>j <Plug>(accelerated_jk_gj)
 nmap <silent>k <Plug>(accelerated_jk_gk)
 " }}}
@@ -51,6 +53,11 @@ vmap <Leader>J <Plug>(jplus-getchar)
 " 行の最初の文字の前にコメント文字をトグル
 nmap <Leader>c <Plug>(caw:hatpos:toggle)
 vmap <Leader>c <Plug>(caw:hatpos:toggle)
+" }}}
+
+" open-browser  {{{
+nmap <Leader>b <Plug>(openbrowser-smart-search)
+vmap <Leader>b <Plug>(openbrowser-smart-search)
 " }}}
 
 " vimdoc-ja {{{

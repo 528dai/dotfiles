@@ -33,7 +33,8 @@ nnoremap x "_x
 " register
 nmap <silent>; "
 
-" Useful save mappings. nnoremap <silent> <Leader><Leader> :<C-u>update<CR>
+" Useful save mappings. 
+nnoremap <silent> <Leader><Leader> :<C-u>update<CR>
 
 " Windows and buffers "{{{
 " The prefix key.
@@ -173,6 +174,9 @@ inoremap <C-t>  <C-v><TAB>
 " Enable undo <C-w> and <C-u>.
 inoremap <C-w>  <C-g>u<C-w>
 inoremap <C-u>  <C-g>u<C-u>
+
+" コンマ後には空白を入れる
+inoremap , ,<Space>
 
 if has('gui_running')
   inoremap <ESC> <ESC>
