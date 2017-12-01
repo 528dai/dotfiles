@@ -24,7 +24,7 @@ zplug 'mafredri/zsh-async'
 zplug "chrissicool/zsh-256color"
 
 zplug "zsh-users/zsh-completions",              defer:0
-zplug "zsh-users/zsh-autosuggestions",          defer:2, on:"zsh-users/zsh-completions"
+#zplug "zsh-users/zsh-autosuggestions",          defer:2, on:"zsh-users/zsh-completions"
 zplug "zsh-users/zsh-syntax-highlighting",      defer:3, on:"zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-history-substring-search", defer:3, on:"zsh-users/zsh-syntax-highlighting"
 
@@ -58,6 +58,9 @@ source $ZSH_ROOT/rc/zshrc.history
 
 # Alias
 source $ZSH_ROOT/rc/zshrc.alias
+
+# Local file
+[ -f $ZSH_ROOT/rc/zshrc.local ] && source $ZSH_ROOT/rc/zshrc.local
 
 
 #########################################################

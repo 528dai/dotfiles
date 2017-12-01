@@ -13,6 +13,7 @@ alias -g C='| cat'
 
 # ls
 alias ls='ls -G'
+[ `uname` = "Linux" ] && alias ls='ls --color'
 alias lst='ls -ltr'
 alias l='ls -ltr'
 alias la='ls -la'
