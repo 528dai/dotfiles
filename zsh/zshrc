@@ -12,7 +12,7 @@ if [[ ! -d $FZF_ROOT ]];then
 fi
 
 export ZPLUG_ROOT=$ZSH_ROOT/zplug
-export ZPLUG_HOME=$ZPLUG_ROOT  # fzf 側の都合で
+export ZPLUG_HOME=$ZPLUG_ROOT  # zplug 側の都合で
 if [[ ! -d $ZPLUG_ROOT ]];then
     git clone https://github.com/zplug/zplug $ZPLUG_ROOT
 fi

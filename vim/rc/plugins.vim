@@ -5,8 +5,6 @@ function! s:source(path) abort " {{{
   execute 'source ' . s:rc_plugin_dir . '/' . a:path
 endfunction " }}}
 
-" call s:source('fzf.vim')
-
 if has('nvim') || has('python3')
   call s:source('deoplete.vim')
   call s:source('denite.vim')
