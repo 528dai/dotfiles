@@ -6,7 +6,7 @@ set ambiwidth=double
 set guifont=Source\ Han\ Code\ JP:h15
 
 set background=dark
-"colorscheme hybrid_reverse
+"colorscheme hybrid_material
 
 "" Mouse:"{{{
 set mouse=

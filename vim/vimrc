@@ -55,7 +55,7 @@ if &t_Co < 256
   colorscheme default
 else
   try
-    colorscheme hybrid_reverse
+    colorscheme hybrid_material
     let g:enable_bold_font = 1
   catch
   endtry
