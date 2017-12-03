@@ -20,6 +20,8 @@ call denite#custom#source('tag', 'matchers', ['matcher_substring'])
 call denite#custom#source('file_rec, grep', 'matchers', ['matcher_cpsm'])
 call denite#custom#source('file_old', 'converters', ['converter_relative_word'])
 
+call denite#custom#map('normal', "o",
+      \ '<denite:do_action:default>')
 call denite#custom#map('normal', "x",
       \ '<denite:do_action:split>')
 call denite#custom#map('insert', "<C-x>",
