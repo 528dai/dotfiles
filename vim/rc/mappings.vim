@@ -43,7 +43,7 @@ nmap t [window]
 nnoremap <silent> [window]x :<C-u>split<CR>:wincmd w<CR>
 nnoremap <silent> [window]v :<C-u>vsplit<CR>:wincmd w<CR>
 nnoremap <silent> [window]o :<C-u>only<CR>
-"nnoremap <silent> <Tab>      :wincmd w<CR>
+"nnoremap <silent> <Tab> :wincmd w<CR>
 nnoremap <silent> L :wincmd w<CR>
 nnoremap <silent> H :wincmd W<CR>
 nnoremap <silent><expr> q winnr('$') != 1 ? ':<C-u>close<CR>' : ""
