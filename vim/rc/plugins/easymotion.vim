@@ -13,6 +13,8 @@ let g:EasyMotion_use_upper = 1
 " Turn on case insensitive feature
 let g:EasyMotion_smartcase = 1
 
+" Jump to first with enter & space
+let g:EasyMotion_space_jump_first = 1
 
 "" Mapping {{{
 map f <Plug>(easymotion-bd-fl)
