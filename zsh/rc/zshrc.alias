@@ -24,7 +24,7 @@ alias ll='ls -l'
 alias v='vim'
 alias vi='\vim'
 #alias vim='nvim'
-alias gvi='mvim'
+alias gv='mvim'
 alias gvim='mvim'
 
 alias mkdir="mkdir -p"
