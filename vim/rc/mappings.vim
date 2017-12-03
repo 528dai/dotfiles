@@ -36,14 +36,16 @@ nmap <silent>; "
 " Useful save mappings. 
 nnoremap <silent> <Leader><Leader> :<C-u>update<CR>
 
-" Windows and buffers "{{{
+" windows and buffers "{{{
 " The prefix key.
-nnoremap [Window] <C-w>
-nmap t [Window]
-nnoremap <silent> [Window]x  :<C-u>split<CR>:wincmd w<CR>
-nnoremap <silent> [Window]v  :<C-u>vsplit<CR>:wincmd w<CR>
-nnoremap <silent> [Window]o  :<C-u>only<CR>
-nnoremap <silent> <Tab>      :wincmd w<CR>
+nnoremap [window] <C-w>
+nmap t [window]
+nnoremap <silent> [window]x :<C-u>split<CR>:wincmd w<CR>
+nnoremap <silent> [window]v :<C-u>vsplit<CR>:wincmd w<CR>
+nnoremap <silent> [window]o :<C-u>only<CR>
+"nnoremap <silent> <Tab>      :wincmd w<CR>
+nnoremap <silent> L :wincmd w<CR>
+nnoremap <silent> H :wincmd W<CR>
 nnoremap <silent><expr> q winnr('$') != 1 ? ':<C-u>close<CR>' : ""
 "}}}
 
