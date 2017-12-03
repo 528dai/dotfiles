@@ -153,6 +153,10 @@ endif
 if v:version >= 704
   set formatoptions+=j
 endif
+
+if has('termguicolors')
+  set termguicolors
+endif
 " }}}
 
 
