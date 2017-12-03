@@ -4,7 +4,7 @@ if !exists('g:syntax_on')
   syntax enable
 endif
 
-"" Visibility {{{
+"" Visibility: {{{
 set listchars=tab:▸\ ,
 set list
 set showbreak=\
@@ -18,7 +18,7 @@ endfunction
 autocmd MyAutoCmd BufWinEnter,ColorScheme * call s:hl_trailing_spaces()
 " }}}
 
-"" Completion {{{
+"" Completion: {{{
 set completeopt&
 set completeopt+=preview
 " set completeopt+=longest
@@ -36,12 +36,12 @@ set wildmenu " Command line autocompletion
 set wildmode=longest,full
 " }}}
 
-"" Conceal {{{
+"" Conceal: {{{
 set conceallevel=2
 set concealcursor=iv
 " }}}
 
-"" Encoding {{{
+"" Encoding: {{{
 set encoding=utf-8 "Sets the character encoding used inside Vim
 set termencoding=utf-8
 set fileencoding=utf-8
@@ -49,12 +49,12 @@ set fileencodings=utf-8,cp932,euc-jp "A list of character encodings
 set fileformats=unix,dos,mac "This gives the end-of-line (<EOL>) formats
 " }}}
 
-"" Fold {{{
+"" Fold: {{{
 set foldenable "Enable fold
 set foldlevel=100 "Folds with a higher level will be closed
 "}}}
 
-"" Indent {{{
+"" Indent: {{{
 set autoindent "Copy indent from current line when starting a new line
 set expandtab "Use the appropriate number of spaces to insert a <Tab>
 set shiftround "Round indent to multiple of 'shiftwidth'
@@ -77,7 +77,7 @@ set hlsearch | nohlsearch " Highlight search patterns, support reloading
 set wrapscan " Searches wrap around the end of the file.
 "}}}
 
-"" Undo {{{
+"" Undo: {{{
 if has('persistent_undo')
   let &undodir = g:vim_root . '/undo'
   set undofile "Automatically saves undo history
@@ -85,7 +85,7 @@ if has('persistent_undo')
 endif
 "}}}
 
-"" Viminfo {{{
+"" Viminfo: {{{
 if has('nvim')
   set shada=!,'300,<50,s10,h
   let &shada .= ',n' .  g:vim_root . '/info/main.shada'
@@ -95,11 +95,11 @@ else
 endif"
 " }}}
 
-"" Swap {{{
+"" Swap: {{{
 set noswapfile
 "}}}
 
-"" Misc {{{
+"" Misc: {{{
 set autoread "Automatically read file again which has been changed outside of Vim
 set backspace=indent,eol,start "Working of <BS>,<Del>,CTRL-W,CTRL-U
 set colorcolumn=80
@@ -128,7 +128,7 @@ set wrap "Lines longer than the width of the window will wrap
 set wrapscan "Searches wrap around the end of the file
 " }}}
 
-"" Misc-conditional {{{
+"" Misc-conditional: {{{
 if has('ambiwidth')
   " ref: https://gist.github.com/sgk/5991138
   set ambiwidth=double "Use twice the width of ASCII characters for Multibyte
