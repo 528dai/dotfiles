@@ -50,6 +50,9 @@ nnoremap <silent><expr> q winnr('$') != 1 ? ':<C-u>close<CR>' : ""
 "}}}
 
 
+nmap <C-u> <C-^> 
+
+
 " Emacs-like cursor move in insert/command-line mode "{{{
 " :h mapmode-ic
 noremap! <C-b> <Left>
