@@ -17,8 +17,7 @@ let g:airline_mode_map = {
 
 " Appearance
 "let g:airline_powerline_fonts = 1
-let g:airline_theme = 'hybridline'
-"let g:airline#extensions#virtualenv#enabled = 1
+let g:airline_theme = 'hybrid'
 
 " タブバーをかっこよく
 let g:airline#extensions#tabline#enabled = 1

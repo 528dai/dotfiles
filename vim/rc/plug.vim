@@ -51,6 +51,9 @@ Plug 'tyru/open-browser.vim'
 
 Plug 'w0ng/vim-hybrid'
 Plug 'kristijanhusak/vim-hybrid-material'
+Plug 'tomasr/molokai'
+Plug 'jdkanani/vim-material-theme'
+Plug 'jacoborus/tender.vim'
 
 Plug 'vim-jp/vimdoc-ja'
 
