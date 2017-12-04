@@ -87,6 +87,9 @@ function mkcd() {
 }
 
 [ `uname` = "Linux" ] && alias open='xdg-open 2>/dev/null'
+[ `uname` = "Linux" ] && alias pbcopy='xsel --clipboard --input'
+[ `uname` = "Linux" ] && alias pbpaste='xsel --clipboard --output'
+
 function myopen() {
   if [ $# -ne 0 ]; then
     open "$@"
