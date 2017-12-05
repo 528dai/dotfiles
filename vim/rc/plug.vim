@@ -49,11 +49,14 @@ Plug 'tyru/caw.vim'
 
 Plug 'tyru/open-browser.vim'
 
+" Colorscheme
 Plug 'w0ng/vim-hybrid'
 Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'tomasr/molokai'
 Plug 'jdkanani/vim-material-theme'
 Plug 'jacoborus/tender.vim'
+Plug 'KeitaNakamura/railscasts.vim'
+Plug 'KeitaNakamura/neodark.vim'
 
 Plug 'vim-jp/vimdoc-ja'
 
