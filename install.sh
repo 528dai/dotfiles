@@ -26,3 +26,5 @@ mkdir -p ~/.config/nvim
 ln -sf ~/dotfiles/vim/vimrc ~/.config/nvim/init.vim
 
 nvim --headless +PlugUpgrade +PlugClean! +PlugUpdate +qall
+
+ln -sf ~/dotfiles/tmux/tmux.conf ~/.tmux.conf

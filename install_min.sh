@@ -22,3 +22,4 @@ curl -fLo \
 ln -sf ~/dotfiles/vim/vimrc ~/.vimrc
 ln -sf ~/dotfiles/vim ~/.vim
 
+ln -sf ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
