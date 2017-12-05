@@ -210,7 +210,7 @@ cnoremap <C-g>          <C-c>
 
 " Terminal  {{{
 if has('nvim')
-  nnoremap <Leader>t :vsplit<CR>:terminal<CR>
+  " nnoremap <Leader>t :vsplit<CR>:terminal<CR>
   tnoremap <ESC>     <C-\><C-n>
   tnoremap jj        <C-\><C-n>
   tnoremap j<Space>  j
