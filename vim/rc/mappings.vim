@@ -47,6 +47,7 @@ nnoremap <silent> [window]o :<C-u>only<CR>
 nnoremap <silent> L :wincmd w<CR>
 nnoremap <silent> H :wincmd W<CR>
 nnoremap <silent><expr> q winnr('$') != 1 ? ':<C-u>close<CR>' : ""
+nnoremap <silent> [window]q :<C-u>q<CR>
 "}}}
 
 

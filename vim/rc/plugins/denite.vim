@@ -60,7 +60,7 @@ nnoremap <silent><C-n> :<C-u>Denite -highlight-mode-insert=Search file_mru<CR>
 " バッファ一覧
 nnoremap <silent>[denite]b :<C-u>Denite -highlight-mode-insert=Search -no-empty -auto-preview buffer<CR>
 " １つ前のバッファを開く
-nnoremap <silent>[denite]u :<C-u>Denite -no-empty -immediately buffer<CR>
+"nnoremap <silent>[denite]u :<C-u>Denite -no-empty -immediately buffer<CR>
 " プログラミングにおけるアウトラインの表示
 nnoremap <silent>[denite]o :<C-u>Denite -split=vertical -mode=normal outline<CR>
 " コマンド
