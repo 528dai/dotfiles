@@ -22,6 +22,15 @@ nmap <silent> <LocalLeader>k <Plug>(ale_previous_wrap)
 "let NERDTreeShowHidden=1  " 隠しファイルの表示
 let NERDTreeIgnore=['\.pyc$']
 nnoremap <silent> <Leader>f :<C-u>NERDTreeToggle<CR>
+"引数なしでvimを開いたらNERDTreeを起動、
+"引数ありならNERDTreeは起動しない、引数で渡されたファイルを開く。
+"How can I open a NERDTree automatically when vim starts up if no files were specified?
+autocmd vimenter * if !argc() | NERDTree | endif
+"他のバッファをすべて閉じた時にNERDTreeが開いていたらNERDTreeも一緒に閉じる。
+"How can I close vim if the only window left open is a NERDTree?
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+"NERDTreeのツリーの幅
+" let g:NERDTreeWinSize=45  " default 31.
 " }}}
 
 call s:source('airline.vim')
