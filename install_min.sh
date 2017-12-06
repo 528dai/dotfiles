@@ -22,4 +22,5 @@ curl -fLo \
 ln -sf ~/dotfiles/vim/vimrc ~/.vimrc
 ln -sf ~/dotfiles/vim ~/.vim
 
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ln -sf ~/dotfiles/tmux/tmux.conf ~/.tmux.conf

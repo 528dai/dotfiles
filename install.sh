@@ -27,4 +27,5 @@ ln -sf ~/dotfiles/vim/vimrc ~/.config/nvim/init.vim
 
 nvim --headless +PlugUpgrade +PlugClean! +PlugUpdate +qall
 
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ln -sf ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
