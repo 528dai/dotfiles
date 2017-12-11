@@ -1,7 +1,7 @@
 scriptencoding utf-8
 
 " Initialize
-if &compatible | set nocompatible | endif
+" if &compatible | set nocompatible | endif
 
 function! s:on_filetype() abort "{{{
   if execute('filetype') =~# 'OFF'
