@@ -59,22 +59,21 @@ nnoremap <silent>[denite]m :<C-u>Denite -highlight-mode-insert=Search file_mru<C
 nnoremap <silent><C-n> :<C-u>Denite -highlight-mode-insert=Search file_mru<CR>
 " バッファ一覧
 nnoremap <silent>[denite]b :<C-u>Denite -highlight-mode-insert=Search -no-empty -auto-preview buffer<CR>
-" １つ前のバッファを開く
-"nnoremap <silent>[denite]u :<C-u>Denite -no-empty -immediately buffer<CR>
 " プログラミングにおけるアウトラインの表示
 nnoremap <silent>[denite]o :<C-u>Denite -split=vertical -mode=normal outline<CR>
 " コマンド
 nnoremap <silent>[denite]: :<C-u>Denite -highlight-mode-insert=Search command<CR>
 nnoremap <silent>[denite]c :<C-u>Denite -highlight-mode-insert=Search command_history<CR>
 " grep検索
-nnoremap <silent>[denite]gr :<C-u>Denite -mode=normal grep<CR>
+nnoremap <silent>[denite]gr :<C-u>Denite -auto-preview -mode=normal grep<CR>
+nnoremap <silent> [denite]gw :<C-u>DeniteCursorWord -auto-preview -mode=normal grep<CR>
 
 " 検索
 nnoremap <silent> [denite]/ :<C-u>Denite -buffer-name=search -auto-highlight -highlight-mode-insert=Search line<CR>
 " 前回の検索パターンを使用して再検索
 nnoremap <silent> [denite]n :<C-u>Denite -buffer-name=search -resume -mode=normal -refresh -highlight-mode-insert=Search<CR>
 " カーソル上の単語で検索
-nnoremap <silent> * :<C-u>DeniteCursorWord -buffer-name=search -auto-highlight -mode=normal -highlight-mode-insert=Search line<CR>
+nnoremap <silent> * :<C-u>DeniteCursorWord -buffer-name=search -auto-highlight -auto-preview -mode=normal -highlight-mode-insert=Search line<CR>
 
 " レジスタ
 nnoremap <silent> ;
