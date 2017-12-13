@@ -42,6 +42,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 
 Plug 'Yggdroot/indentLine'
+Plug 'cohama/lexima.vim'
 
 Plug 'easymotion/vim-easymotion'
 Plug 'rhysd/accelerated-jk'

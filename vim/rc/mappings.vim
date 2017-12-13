@@ -36,6 +36,9 @@ nmap <silent>; "
 " Useful save mappings. 
 nnoremap <silent> <Leader><Leader> :<C-u>update<CR>
 
+nnoremap H 0
+nnoremap L $
+
 " windows and buffers "{{{
 " The prefix key.
 nnoremap [window] <C-w>
@@ -43,9 +46,9 @@ nmap t [window]
 nnoremap <silent> [window]x :<C-u>split<CR>:wincmd w<CR>
 nnoremap <silent> [window]v :<C-u>vsplit<CR>:wincmd w<CR>
 nnoremap <silent> [window]o :<C-u>only<CR>
-"nnoremap <silent> <Tab> :wincmd w<CR>
-nnoremap <silent> L :wincmd w<CR>
-nnoremap <silent> H :wincmd W<CR>
+" nnoremap <silent> <Tab> :wincmd w<CR>
+" nnoremap <silent> L :wincmd w<CR>
+" nnoremap <silent> H :wincmd W<CR>
 nnoremap <silent><expr> q winnr('$') != 1 ? ':<C-u>close<CR>' : ""
 nnoremap <silent> [window]q :<C-u>q<CR>
 "}}}
@@ -79,6 +82,7 @@ xnoremap <silent> Y :<C-u>call <SID>keepcursor_visual_wrapper('Y')<CR>
 " Indent
 nnoremap > >>
 nnoremap < <<
+nnoremap == gg=G
 xnoremap > >gv
 xnoremap < <gv
 
