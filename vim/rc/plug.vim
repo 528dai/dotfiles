@@ -48,6 +48,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'rhysd/accelerated-jk'
 Plug 'osyo-manga/vim-jplus'
 Plug 'tyru/caw.vim'
+Plug 'tpope/vim-surround'
 
 Plug 'tyru/open-browser.vim'
 
