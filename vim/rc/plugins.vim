@@ -58,8 +58,8 @@ vmap <Leader>J <Plug>(jplus-getchar)
 
 " caw {{{
 " 行の最初の文字の前にコメント文字をトグル
-nmap <Leader>c <Plug>(caw:hatpos:toggle)
-vmap <Leader>c <Plug>(caw:hatpos:toggle)
+nmap gc <Plug>(caw:hatpos:toggle)
+vmap gc <Plug>(caw:hatpos:toggle)
 " }}}
 
 " open-browser  {{{
