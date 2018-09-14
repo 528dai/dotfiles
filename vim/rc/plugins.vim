@@ -6,7 +6,6 @@ function! s:source(path) abort " {{{
 endfunction " }}}
 
 if has('nvim') || has('python3')
-  call s:source('deoplete.vim')
   call s:source('denite.vim')
 endif
 

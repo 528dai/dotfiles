@@ -9,14 +9,10 @@ endif
 call plug#begin(g:vim_root . '/plugged')
 
 if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
   Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
   Plug 'critiqjo/lldb.nvim', { 'do': ':UpdateRemotePlugins' }
 elseif has('python3')
-  Plug 'Shougo/deoplete.nvim'
   Plug 'Shougo/denite.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
 endif
 
 if has('nvim') || has('python3')
@@ -25,9 +21,6 @@ if has('nvim') || has('python3')
   Plug 'Shougo/unite-outline'
   Plug 'pocari/vim-denite-command-history'
   Plug 'nixprime/cpsm',  { 'do': 'env PY3=ON ./install.sh'}
-
-  Plug 'zchee/deoplete-clang', { 'for': ['c', 'cpp'] }
-  Plug 'zchee/deoplete-jedi', { 'for': 'python' }
 endif
 
 Plug 'Shougo/neosnippet'
