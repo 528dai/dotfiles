@@ -91,9 +91,11 @@ function mkcd() {
 [ `uname` = "Linux" ] && alias pbpaste='xsel --clipboard --output'
 
 function myopen() {
-  if [ $# -ne 0 ]; then
+  if [ -p /dev/stdin ]; then  # パイプから来たら
+    cat - | xargs open
+  elif [ $# -ne 0 ]; then  # 引数有
     open "$@"
-  else
+  else  # 引数無
     open .
   fi
 }
@@ -109,3 +111,5 @@ REPORTTIME=3
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# pyenv
+eval "$(pyenv init -)"
