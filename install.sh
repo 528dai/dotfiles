@@ -15,10 +15,6 @@ set -eo pipefail
 
 ln -sf ~/dotfiles/zsh/zshrc ~/.zshrc
 
-curl -fLo \
-     ~/dotfiles/vim/plug/autoload/plug.vim --create-dirs \
-     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
 ln -sf ~/dotfiles/vim/vimrc ~/.vimrc
 ln -sf ~/dotfiles/vim ~/.vim
 

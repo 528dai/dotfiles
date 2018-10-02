@@ -2,21 +2,19 @@
 export ZSH_ROOT=~/dotfiles/zsh
 
 if [ ! -f ~/.zshrc.zwc -o ~/.zshrc -nt ~/.zshrc.zwc ]; then
-    zcompile ~/.zshrc
-fi
-
-export FZF_ROOT=$ZSH_ROOT/fzf
-if [[ ! -d $FZF_ROOT ]];then
-    git clone --depth 1 https://github.com/junegunn/fzf.git $FZF_ROOT
-    $FZF_ROOT/install
+  zcompile ~/.zshrc
 fi
 
 export ZPLUG_ROOT=$ZSH_ROOT/zplug
 export ZPLUG_HOME=$ZPLUG_ROOT  # zplug 側の都合で
 if [[ ! -d $ZPLUG_ROOT ]];then
-    git clone https://github.com/zplug/zplug $ZPLUG_ROOT
+  git clone https://github.com/zplug/zplug $ZPLUG_ROOT
 fi
 source $ZPLUG_ROOT/init.zsh
+
+
+# Emacs風のキーバインド
+bindkey -e  # キーバインドを上書きする関係でここ
 
 
 # Plugins
@@ -24,48 +22,66 @@ zplug 'mafredri/zsh-async'
 zplug "chrissicool/zsh-256color"
 
 zplug "zsh-users/zsh-completions",              defer:0
-zplug "zsh-users/zsh-autosuggestions",          defer:2, on:"zsh-users/zsh-completions", at:v0.4.0 
+# 入力途中に候補をうっすら表示
+zplug "zsh-users/zsh-autosuggestions",          defer:2, on:"zsh-users/zsh-completions"
+# コマンドを種類ごとに色付け
 zplug "zsh-users/zsh-syntax-highlighting",      defer:3, on:"zsh-users/zsh-autosuggestions"
+# ヒストリの補完を強化する
 zplug "zsh-users/zsh-history-substring-search", defer:3, on:"zsh-users/zsh-syntax-highlighting"
 
-zplug "b4b4r07/enhancd", use:init.sh
+# git の補完を効かせる
+zplug "plugins/git", from:oh-my-zsh
+
+zplug "junegunn/fzf-bin", as:command, from:gh-r, rename-to:fzf
+zplug "junegunn/fzf", as:command, use:"bin/fzf-tmux", use:"shell/*.zsh"
+
+zplug "b4b4r07/enhancd", use:init.sh, on:"junegunn/fzf-bin"
 
 # Theme
 zplug 'sindresorhus/pure', on:'mafredri/zsh-async', use:pure.zsh, as:theme
 
+# 自分自身をプラグインとして管理
+zplug "zplug/zplug", hook-build:'zplug --self-manage'
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    fi
+  printf "Install? [y/N]: "
+  if read -q; then
+    echo; zplug install
+  fi
 fi
 
 # Then, source plugins and add commands to $PATH
-#zplug load --verbose
+# zplug load --verbose
 zplug load
 #########################################################
 
 
 # 環境変数
-source $ZSH_ROOT/rc/zshrc.env
+source $ZSH_ROOT/rc/env.zshrc
 
 # 補完
-source $ZSH_ROOT/rc/zshrc.complement
+source $ZSH_ROOT/rc/complement.zshrc
 
 # History
-source $ZSH_ROOT/rc/zshrc.history
+source $ZSH_ROOT/rc/history.zshrc
 
 # Alias
-source $ZSH_ROOT/rc/zshrc.alias
+source $ZSH_ROOT/rc/alias.zshrc
 
 # Local file
-[ -f $ZSH_ROOT/rc/zshrc.local ] && source $ZSH_ROOT/rc/zshrc.local
+[ -f $ZSH_ROOT/rc/local.zshrc ] && source $ZSH_ROOT/rc/local.zshrc
 
 
 #########################################################
-## その他設定 {{{1
+## 拡張
+# enhanced
+zle -N __enhancd::cd
+bindkey '^f' __enhancd::cd
+
+
+#########################################################
+## その他設定
 # プロンプトの色表示を有効にする
 autoload -U colors
 colors
@@ -78,17 +94,19 @@ chpwd() { ls -G }
 
 # mkdirとcdを同時実行
 function mkcd() {
-    if [[ -d $1 ]]; then
-        echo "$1 already exists!"
-        cd $1
-    else
-        mkdir -p $1 && cd $1
-    fi
+  if [[ -d $1 ]]; then
+    echo "$1 already exists!"
+    cd $1
+  else
+    mkdir -p $1 && cd $1
+  fi
 }
 
-[ `uname` = "Linux" ] && alias open='xdg-open 2>/dev/null'
-[ `uname` = "Linux" ] && alias pbcopy='xsel --clipboard --input'
-[ `uname` = "Linux" ] && alias pbpaste='xsel --clipboard --output'
+if [ `uname` = "Linux" ]; then
+  alias open='xdg-open 2>/dev/null'
+  alias pbcopy='xsel --clipboard --input'
+  alias pbpaste='xsel --clipboard --output'
+fi
 
 function myopen() {
   if [ -p /dev/stdin ]; then  # パイプから来たら
@@ -100,16 +118,8 @@ function myopen() {
   fi
 }
 
-# Emacs風のキーバインド
-bindkey -e
-
 # 実行時間が長いコマンドは秒数を表示する
 REPORTTIME=3
-## }}}1
-
-
-# fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # pyenv
 eval "$(pyenv init -)"
