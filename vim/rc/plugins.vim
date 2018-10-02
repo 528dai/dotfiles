@@ -5,18 +5,6 @@ function! s:source(path) abort " {{{
   execute 'source ' . s:rc_plugin_dir . '/' . a:path
 endfunction " }}}
 
-if has('nvim') || has('python3')
-  call s:source('denite.vim')
-endif
-
-call s:source('neosnippet.vim')
-
-" ale  {{{
-let g:ale_echo_msg_format = '[%linter%] %s'
-nmap <silent> <LocalLeader>j <Plug>(ale_next_wrap)
-nmap <silent> <LocalLeader>k <Plug>(ale_previous_wrap)
-" }}}
-
 " NERDTree {{{
 "let NERDTreeShowHidden=1  " 隠しファイルの表示
 let NERDTreeIgnore=['\.pyc$']
