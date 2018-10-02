@@ -1,6 +1,5 @@
 # 補完を有効にする
-autoload -U compinit
-compinit -u
+autoload -Uz compinit && compinit
 
 # 補完候補を詰めて表示する
 setopt list_packed
@@ -30,7 +29,7 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 # カーソル位置で補完する
 setopt complete_in_word
- 
+
 # 補完候補が複数あるときに自動的に一覧表示する
-setopt auto_menu 
+setopt auto_menu
 
