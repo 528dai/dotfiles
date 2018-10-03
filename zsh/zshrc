@@ -37,6 +37,8 @@ zplug "junegunn/fzf", as:command, use:"bin/fzf-tmux"
 zplug "junegunn/fzf", use:"shell/*.zsh"
 
 zplug "b4b4r07/enhancd", use:init.sh, on:"junegunn/fzf-bin"
+zplug "b4b4r07/easy-oneliner", on:"junegunn/fzf-bin"
+
 
 # Theme
 zplug 'sindresorhus/pure', on:'mafredri/zsh-async', use:pure.zsh, as:theme
@@ -80,6 +82,8 @@ source $ZSH_ROOT/rc/alias.zshrc
 zle -N __enhancd::cd
 bindkey '^f' __enhancd::cd
 
+# easy-oneliner
+export EASY_ONE_REFFILE=$ZSH_ROOT/easy-oneliner.txt
 
 #########################################################
 ## その他設定
