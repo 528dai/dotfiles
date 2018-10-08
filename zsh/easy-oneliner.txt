@@ -26,7 +26,8 @@
 #     #は行頭にあるとfzfが無視しますが、:は問題無いです
 #
 
-[brew] brew update && brew upgrade && brew cleanup && brew doctor ! # 即実行
+[brew auto-update] brew update && brew upgrade && brew cleanup && brew doctor ! # 即実行
+[pip auto-update] pip freeze --local | grep -v '^\-e' | cut -d = -f 1 | xargs pip install -U pip && pip check ! 
 
 : その他
 [lsとsedによる簡易treeコマンド] ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'
