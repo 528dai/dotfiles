@@ -1,3 +1,5 @@
+export PATH="$HOME/.cargo/bin:$PATH"
+
 export TERM=xterm-256color
 
 export EDITOR=vim
