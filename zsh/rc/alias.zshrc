@@ -48,8 +48,10 @@ alias gf="git fetch --prune"
 alias gco="git checkout"
 alias gb="git branch"
 alias gg="git grep -H --heading --break"
+alias gmn="git merge --no-ff"
 
 # alias -s
+# 拡張子を見てうまくやってくれるやつ
 alias -s py="python3"
 
 # pyenv 入れてる時 brew doctor したら出る Warning を消す
