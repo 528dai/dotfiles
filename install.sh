@@ -20,3 +20,5 @@ ln -sf ~/dotfiles/vim ~/.vim
 
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ln -sf ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
+
+ln -sf ~/dotfiles/alacritty/alacritty.yml ~/.alacritty.yml
