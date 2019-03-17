@@ -58,3 +58,4 @@ alias -s py="python3"
 # https://www.task-notes.com/entry/20141223/1419324649
 # https://qiita.com/takc923/items/45386905f70fde9af0e7
 alias brew="env PATH=${PATH/~\/\.pyenv\/shims:/} brew"
+# alias brew="env PATH=${PATH/~\/\.cargo\/bin:/} brew"
