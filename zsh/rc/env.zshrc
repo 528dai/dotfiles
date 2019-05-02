@@ -13,3 +13,5 @@ export XDG_DATA_HOME=$HOME/.local/share
 export VIM_ROOT=~/dotfiles/vim
 
 export PIPENV_VENV_IN_PROJECT=true
+
+export LLVM_SYS_70_PREFIX="/usr/local/opt/llvm@7"
