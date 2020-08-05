@@ -139,10 +139,6 @@ function myopen() {
 # 実行時間が長いコマンドは秒数を表示する
 REPORTTIME=3
 
-# pyenv
-eval "$(pyenv init -)"
-
-
 # 起動時に自動的に tmux
 # https://qiita.com/ssh0/items/a9956a74bff8254a606a
 if [[ ! -n $TMUX && $- == *l* ]]; then
