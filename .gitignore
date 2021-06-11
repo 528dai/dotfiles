@@ -3,7 +3,7 @@ vim/plug/*
 vim/plugged/*
 vim/undo/*
 
-zsh/rc/zshrc.local
+zsh/rc/local.zshrc
 zsh/zsh_history
 zsh/zplug
 
