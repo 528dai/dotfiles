@@ -1,17 +1,6 @@
 #!/bin/bash
 
-if [ "$(uname)" == 'Darwin' ]; then
-  os='Mac'
-elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
-  os='Linux'
-elif [ "$(expr substr $(uname -s) 1 10)" == 'MINGW32_NT' ]; then
-  os='Cygwin'
-else
-  echo "Your platform ($(uname -a)) is not supported."
-  exit 1
-fi
-
-set -eo pipefail
+set -eu
 
 ln -sf ~/dotfiles/zsh/zshrc ~/.zshrc
 # zlug install
@@ -24,4 +13,3 @@ ln -sf ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
 
 # ln -sf ~/dotfiles/alacritty/alacritty.yml ~/.alacritty.yml
 
-# ln -sf ~/dotfiles/gdb/gdb-dashboard/.gdbinit ~/.gdbinit
