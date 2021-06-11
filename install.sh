@@ -3,7 +3,8 @@
 set -eu
 
 ln -sf ~/dotfiles/zsh/zshrc ~/.zshrc
-# zlug install
+# zplug install
+# zplug load --verbose
 
 ln -sf ~/dotfiles/vim/vimrc ~/.vimrc
 ln -sf ~/dotfiles/vim ~/.vim
