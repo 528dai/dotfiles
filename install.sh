@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env zsh
 
 set -eu
 
@@ -8,11 +8,15 @@ source ~/.zshrc
 zplug install
 zplug load --verbose
 
-ln -sf ~/dotfiles/vim/vimrc ~/.vimrc
-ln -sf ~/dotfiles/vim ~/.vim
+if type vim > /dev/null 2>&1; then
+  ln -sf ~/dotfiles/vim/vimrc ~/.vimrc
+  ln -sf ~/dotfiles/vim ~/.vim
+fi
 
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-ln -sf ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
+if type tmux > /dev/null 2>&1; then
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+  ln -sf ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
+fi
 
 # ln -sf ~/dotfiles/alacritty/alacritty.yml ~/.alacritty.yml
 
