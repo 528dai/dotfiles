@@ -164,7 +164,7 @@ if [ ! -f /.dockerenv ]; then  # docker環境ではない
           # Launch a new instance of the agent
           ssh-agent -s &> $HOME/.ssh/ssh-agent
     fi
-    eval `cat $HOME/.ssh/ssh-agent`
+    eval `cat $HOME/.ssh/ssh-agent` > /dev/null 2>&1
   fi
 fi
 
