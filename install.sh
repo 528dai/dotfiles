@@ -1,7 +1,5 @@
 #!/usr/bin/env zsh
 
-set -eu
-
 sudo locale-gen ja_JP.UTF-8
 ln -sf ~/dotfiles/zsh/zshrc ~/.zshrc
 source ~/.zshrc
