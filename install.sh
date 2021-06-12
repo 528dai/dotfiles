@@ -2,9 +2,11 @@
 
 set -eu
 
+sudo locale-gen ja_JP.UTF-8
 ln -sf ~/dotfiles/zsh/zshrc ~/.zshrc
-# zplug install
-# zplug load --verbose
+source ~/.zshrc
+zplug install
+zplug load --verbose
 
 ln -sf ~/dotfiles/vim/vimrc ~/.vimrc
 ln -sf ~/dotfiles/vim ~/.vim
