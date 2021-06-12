@@ -155,19 +155,6 @@ if [[ ! -n $TMUX && $- == *l* ]]; then
   fi
 fi
 
-if [ ! -f /.dockerenv ]; then  # docker環境ではない
-  # https://code.visualstudio.com/docs/remote/containers#_sharing-git-credentials-with-your-container
-  if [ -z "$SSH_AUTH_SOCK" ]; then
-    # Check for a currently running instance of the agent
-    RUNNING_AGENT="`ps -ax | grep 'ssh-agent -s' | grep -v grep | wc -l | tr -d '[:space:]'`"
-    if [ "$RUNNING_AGENT" = "0" ]; then
-          # Launch a new instance of the agent
-          ssh-agent -s &> $HOME/.ssh/ssh-agent
-    fi
-    eval `cat $HOME/.ssh/ssh-agent` > /dev/null 2>&1
-  fi
-fi
-
 if [ ! -f ~/.zshrc.zwc -o ~/.zshrc -nt ~/.zshrc.zwc ]; then
   zcompile ~/.zshrc
 fi
