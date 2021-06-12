@@ -1,10 +1,6 @@
 # Initialize
 export ZSH_ROOT=~/dotfiles/zsh
 
-if [ ! -f ~/.zshrc.zwc -o ~/.zshrc -nt ~/.zshrc.zwc ]; then
-  zcompile ~/.zshrc
-fi
-
 export ZPLUG_ROOT=$ZSH_ROOT/zplug
 export ZPLUG_HOME=$ZPLUG_ROOT  # zplug 側の都合で
 if [[ ! -d $ZPLUG_ROOT ]];then
@@ -157,4 +153,8 @@ if [[ ! -n $TMUX && $- == *l* ]]; then
   else
     :  # Start terminal normally
   fi
+fi
+
+if [ ! -f ~/.zshrc.zwc -o ~/.zshrc -nt ~/.zshrc.zwc ]; then
+  zcompile ~/.zshrc
 fi
