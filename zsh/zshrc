@@ -1,10 +1,3 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 # Initialize
 export ZSH_ROOT=~/dotfiles/zsh
 autoload -Uz compinit && compinit
@@ -35,7 +28,7 @@ autoload -Uz _zinit
 zinit light chrissicool/zsh-256color
 
 # fzf
-zinit ice wait lucid from"gh-r" as"program"; zinit light junegunn/fzf-bin
+zinit ice wait lucid from"gh-r" as"program" id-as"fzf-bin"; zinit light junegunn/fzf
 zinit ice wait lucid src'shell/key-bindings.zsh'; zinit light junegunn/fzf
 
 # 補完
@@ -155,23 +148,23 @@ REPORTTIME=3
 
 # 起動時に自動的に tmux
 # https://qiita.com/ssh0/items/a9956a74bff8254a606a
-if [[ ! -n $TMUX && $- == *l* ]]; then
-  FILTER=fzf
-  ID="$(tmux list-sessions 2>/dev/null)"
-  if [[ -z "$ID" ]]; then
-    tmux new-session
-  fi
-  create_new_session="Create New Session"
-  ID="$ID\n${create_new_session}:"
-  ID="`echo $ID | $FILTER | cut -d: -f1`"
-  if [[ "$ID" = "${create_new_session}" ]]; then
-    tmux new-session
-  elif [[ -n "$ID" ]]; then
-    tmux attach-session -t "$ID"
-  else
-    :  # Start terminal normally
-  fi
-fi
+# if [[ ! -n $TMUX && $- == *l* ]]; then
+#   FILTER=fzf
+#   ID="$(tmux list-sessions 2>/dev/null)"
+#   if [[ -z "$ID" ]]; then
+#     tmux new-session
+#   fi
+#   create_new_session="Create New Session"
+#   ID="$ID\n${create_new_session}:"
+#   ID="`echo $ID | $FILTER | cut -d: -f1`"
+#   if [[ "$ID" = "${create_new_session}" ]]; then
+#     tmux new-session
+#   elif [[ -n "$ID" ]]; then
+#     tmux attach-session -t "$ID"
+#   else
+#     :  # Start terminal normally
+#   fi
+# fi
 
 if [ ! -f ~/.zshrc.zwc -o ~/.zshrc -nt ~/.zshrc.zwc ]; then
   zcompile ~/.zshrc
