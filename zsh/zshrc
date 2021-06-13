@@ -1,6 +1,9 @@
 # Initialize
 export ZSH_ROOT=~/dotfiles/zsh
 
+# Local init file
+[ -f $ZSH_ROOT/rc/local_init.zshrc ] && source $ZSH_ROOT/rc/local_init.zshrc
+
 export ZPLUG_ROOT=$ZSH_ROOT/zplug
 export ZPLUG_HOME=$ZPLUG_ROOT  # zplug 側の都合で
 if [[ ! -d $ZPLUG_ROOT ]];then
