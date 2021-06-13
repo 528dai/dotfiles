@@ -22,11 +22,3 @@ setopt extended_history
 # zshプロセス間でヒストリを共有する
 setopt share_history
 
-# ヒストリサーチ
-if zplug check "zsh-users/zsh-history-substring-search"; then
-    bindkey '^p' history-substring-search-up
-    bindkey '^n' history-substring-search-down
-    bindkey '^[[A' history-substring-search-up
-    bindkey '^[[B' history-substring-search-down
-fi
-

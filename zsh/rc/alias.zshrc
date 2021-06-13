@@ -6,10 +6,8 @@ alias -g .....='../../../..'
 
 alias -g G='| grep'
 alias -g L='| less'
-alias -g H='| head'
-alias -g T='| tail'
-alias -g S='| sed'
-alias -g C='| cat'
+# alias -g C='| cat'  # fzf-tab と相性悪そう
+alias -g B='| bat'
 
 # ls
 alias ls='ls -G'
