@@ -1,61 +1,66 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # Initialize
 export ZSH_ROOT=~/dotfiles/zsh
+autoload -Uz compinit && compinit
 
 # Local init file
 [ -f $ZSH_ROOT/rc/local_init.zshrc ] && source $ZSH_ROOT/rc/local_init.zshrc
 
-export ZPLUG_ROOT=$ZSH_ROOT/zplug
-export ZPLUG_HOME=$ZPLUG_ROOT  # zplug 側の都合で
-if [[ ! -d $ZPLUG_ROOT ]];then
-  git clone https://github.com/zplug/zplug $ZPLUG_ROOT
-fi
-source $ZPLUG_ROOT/init.zsh
-
-
 # Emacs風のキーバインド
 bindkey -e  # キーバインドを上書きする関係でここ
 
+# Added by Zinit's installer
+if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
+    print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
+    command mkdir -p "$HOME/.zinit" && command chmod g-rwX "$HOME/.zinit"
+    command git clone https://github.com/zdharma/zinit "$HOME/.zinit/bin" && \
+        print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
+        print -P "%F{160}▓▒░ The clone has failed.%f%b"
+fi
+
+source ~/.zinit/bin/zinit.zsh
+
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+# End of Zinit's installer chunk
 
 # Plugins
-zplug 'mafredri/zsh-async'
-zplug "chrissicool/zsh-256color"
+zinit light chrissicool/zsh-256color
 
-zplug "zsh-users/zsh-completions",              defer:0
-# 入力途中に候補をうっすら表示
-zplug "zsh-users/zsh-autosuggestions",          defer:2, on:"zsh-users/zsh-completions"
-# コマンドを種類ごとに色付け
-zplug "zsh-users/zsh-syntax-highlighting",      defer:3, on:"zsh-users/zsh-autosuggestions"
-# ヒストリの補完を強化する
-zplug "zsh-users/zsh-history-substring-search", defer:3, on:"zsh-users/zsh-syntax-highlighting"
+# fzf
+zinit ice wait lucid src'shell/key-bindings.zsh'; zinit light junegunn/fzf
 
-# git の補完を効かせる
-zplug "plugins/git", from:oh-my-zsh
+# 補完
+zinit ice wait lucid; zinit light Aloxaf/fzf-tab
+# zsh-users/zsh-autosuggestions: 入力途中に候補をうっすら表示
+# zsh-users/zsh-syntax-highlighting: コマンドを種類ごとに色付け
+# zsh-users/zsh-history-substring-searc: ヒストリの補完を強化する
+zinit wait blockf lucid light-mode for \
+  zsh-users/zsh-completions \
+  zsh-users/zsh-autosuggestions \
+  zsh-users/zsh-syntax-highlighting \
+  zsh-users/zsh-history-substring-search \
 
-zplug "junegunn/fzf-bin", as:command, from:gh-r, rename-to:fzf
-zplug "junegunn/fzf", as:command, use:"bin/fzf-tmux"
-zplug "junegunn/fzf", use:"shell/*.zsh"
+# シンタックスハイライト
+zinit ice wait lucid; zinit light zdharma/fast-syntax-highlighting
 
-zplug "b4b4r07/enhancd", use:init.sh, on:"junegunn/fzf-bin"
-zplug "b4b4r07/easy-oneliner", on:"junegunn/fzf-bin"
+zinit light 'b4b4r07/easy-oneliner'
 
+# 見やすいcat
+zinit ice as"program" from"gh-r" mv"bat* -> bat" pick"bat/bat"
+zinit light sharkdp/bat
+
+# gitレポジトリをブラウザで開く
+zinit ice wait lucid; zinit light paulirish/git-open
 
 # Theme
-zplug 'sindresorhus/pure', on:'mafredri/zsh-async', use:pure.zsh, as:theme
-
-# 自分自身をプラグインとして管理
-zplug "zplug/zplug", hook-build:'zplug --self-manage'
-
-# Install plugins if there are plugins that have not been installed
-# if ! zplug check --verbose; then
-#   printf "Install? [y/N]: "
-#   if read -q; then
-#     echo; zplug install
-#   fi
-# fi
-
-# Then, source plugins and add commands to $PATH
-# zplug load --verbose
-zplug load
+zinit ice compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh'; zinit light sindresorhus/pure
 #########################################################
 
 
@@ -77,12 +82,16 @@ source $ZSH_ROOT/rc/alias.zshrc
 
 #########################################################
 ## 拡張
+# fzf
+if type tmux > /dev/null 2>&1; then
+  export FZF_TMUX=1
+fi
+
 # enhanced
-ENHANCD_DISABLE_HOME=1
+# ENHANCD_DISABLE_HOME=1
 
 # easy-oneliner
 export EASY_ONE_REFFILE=$ZSH_ROOT/easy-oneliner.txt
-
 #########################################################
 ## その他設定
 # プロンプトの色表示を有効にする
@@ -118,11 +127,16 @@ function mkcd() {
 }
 
 # Mac command for Linux
-if [ `uname` = "Linux" ]; then
+if [[ "$(uname -r)" == *microsoft* ]]; then  # WSL
+  alias open='cmd.exe /c start $(wslpath -w .)'
+  alias pbcopy='clip.exe'
+  alias pbpaste='powershell.exe -Command Get-Clipboard'
+elif [ `uname` = "Linux" ]; then
   alias open='xdg-open 2>/dev/null'
   alias pbcopy='xsel --clipboard --input'
   alias pbpaste='xsel --clipboard --output'
 fi
+
 
 # My open()
 function myopen() {

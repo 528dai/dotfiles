@@ -1,6 +1,3 @@
-# 補完を有効にする
-autoload -Uz compinit && compinit
-
 # 補完候補を詰めて表示する
 setopt list_packed
 
@@ -33,3 +30,14 @@ setopt complete_in_word
 # 補完候補が複数あるときに自動的に一覧表示する
 setopt auto_menu
 
+# disable sort when completing `git checkout`
+zstyle ':completion:*:git-checkout:*' sort false
+
+# set descriptions format to enable group support
+zstyle ':completion:*:descriptions' format '[%d]'
+
+# preview directory's content with ls when completing cd
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls -1 --color=always $realpath'
+
+# switch group using `,` and `.`
+zstyle ':fzf-tab:*' switch-group ',' '.'
