@@ -31,9 +31,11 @@ autoload -Uz _zinit
 # End of Zinit's installer chunk
 
 # Plugins
+# color
 zinit light chrissicool/zsh-256color
 
 # fzf
+zinit ice wait lucid from"gh-r" as"program"; zinit light junegunn/fzf-bin
 zinit ice wait lucid src'shell/key-bindings.zsh'; zinit light junegunn/fzf
 
 # 補完
