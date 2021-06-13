@@ -148,23 +148,23 @@ REPORTTIME=3
 
 # 起動時に自動的に tmux
 # https://qiita.com/ssh0/items/a9956a74bff8254a606a
-if [[ ! -n $TMUX && $- == *l* ]]; then
-  FILTER=fzf
-  ID="$(tmux list-sessions 2>/dev/null)"
-  if [[ -z "$ID" ]]; then
-    tmux new-session
-  fi
-  create_new_session="Create New Session"
-  ID="$ID\n${create_new_session}:"
-  ID="`echo $ID | $FILTER | cut -d: -f1`"
-  if [[ "$ID" = "${create_new_session}" ]]; then
-    tmux new-session
-  elif [[ -n "$ID" ]]; then
-    tmux attach-session -t "$ID"
-  else
-    :  # Start terminal normally
-  fi
-fi
+# if [[ ! -n $TMUX && $- == *l* ]]; then
+#   FILTER=fzf
+#   ID="$(tmux list-sessions 2>/dev/null)"
+#   if [[ -z "$ID" ]]; then
+#     tmux new-session
+#   fi
+#   create_new_session="Create New Session"
+#   ID="$ID\n${create_new_session}:"
+#   ID="`echo $ID | $FILTER | cut -d: -f1`"
+#   if [[ "$ID" = "${create_new_session}" ]]; then
+#     tmux new-session
+#   elif [[ -n "$ID" ]]; then
+#     tmux attach-session -t "$ID"
+#   else
+#     :  # Start terminal normally
+#   fi
+# fi
 
 if [ ! -f ~/.zshrc.zwc -o ~/.zshrc -nt ~/.zshrc.zwc ]; then
   zcompile ~/.zshrc
