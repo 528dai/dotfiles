@@ -34,7 +34,13 @@ zstyle ':completion:*:git-checkout:*' sort false
 zstyle ':completion:*:descriptions' format '[%d]'
 
 # preview directory's content with ls when completing cd
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls -1 --color=always $realpath'
+if [[ $(command -v exa) ]]; then
+  zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
+elif [ `uname` = "Linux" ]; then
+  zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls -1 --color=always $realpath'
+else
+  zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls -1 $realpath'
+fi
 
 # switch group using `,` and `.`
 zstyle ':fzf-tab:*' switch-group ',' '.'

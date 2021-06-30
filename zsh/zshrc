@@ -47,6 +47,10 @@ zinit ice wait lucid; zinit light zdharma/fast-syntax-highlighting
 
 zinit light 'b4b4r07/easy-oneliner'
 
+# 見やすいls
+zinit ice as"program" from"gh-r" pick"bin/exa"
+zinit light ogham/exa
+
 # 見やすいcat
 zinit ice as"program" from"gh-r" mv"bat* -> bat" pick"bat/bat"
 zinit light sharkdp/bat
@@ -78,7 +82,7 @@ source $ZSH_ROOT/rc/alias.zshrc
 #########################################################
 ## 拡張
 # fzf
-if type tmux > /dev/null 2>&1; then
+if [[ $(command -v tmux) ]] then
   export FZF_TMUX=1
 fi
 
