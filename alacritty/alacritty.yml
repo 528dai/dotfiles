@@ -78,6 +78,12 @@ window:
   # Set this to `None` to use the default theme variant.
   gtk_theme_variant: None
 
+  # Background opacity
+  #
+  # Window opacity as a floating point number from `0.0` to `1.0`.
+  # The value `0.0` is completely transparent and `1.0` is opaque.
+  opacity: 0.98
+
 scrolling:
   # Maximum number of lines in the scrollback buffer.
   # Specifying '0' will disable scrolling.
@@ -118,7 +124,7 @@ font:
     #   - (macOS) Menlo
     #   - (Linux) monospace
     #   - (Windows) Consolas
-    family: 'HackGenNerd Console'
+    family: 'HackGen Console NF'
 
     # The `style` can be specified to pick a specific face.
     #style: Regular
@@ -130,7 +136,7 @@ font:
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
     #family: monospace
-    family: 'HackGenNerd Console'
+    family: 'HackGen Console NF'
 
     # The `style` can be specified to pick a specific face.
     #style: Bold
@@ -141,7 +147,7 @@ font:
     #
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: 'HackGenNerd Console'
+    family: 'HackGen Console NF'
 
     # The `style` can be specified to pick a specific face.
     #style: Italic
@@ -285,12 +291,6 @@ visual_bell:
   duration: 0
   color: '0xffffff'
 
-# Background opacity
-#
-# Window opacity as a floating point number from `0.0` to `1.0`.
-# The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: 0.98
-
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
 
@@ -386,7 +386,7 @@ mouse:
   # If this is `true`, the cursor is temporarily hidden when typing.
   hide_when_typing: false
 
-  url:
+  hints:
     # URL launcher
     #
     # This program is executed when clicking on a text which is recognized as a URL.
