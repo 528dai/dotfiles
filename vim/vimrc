@@ -1,8 +1,6 @@
 scriptencoding utf-8
 
 " Initialize
-" if &compatible | set nocompatible | endif
-
 function! s:on_filetype() abort "{{{
   if execute('filetype') =~# 'OFF'
     " Lazy loading
@@ -43,9 +41,6 @@ function! s:source_rc_local(path) abort " {{{
 endfunction " }}}
 
 if has('vim_starting')
-  let g:startuptime = reltime()
-  autocmd MyAutoCmd VimEnter * let g:startuptime = reltime(g:startuptime) | redraw | echomsg 'startuptime: ' . reltimestr(g:startuptime)
-
   call s:source_rc('init.vim')
 endif
 
