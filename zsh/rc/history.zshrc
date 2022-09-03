@@ -1,5 +1,5 @@
 # ヒストリを保存するファイル名
-HISTFILE=$ZSH_ROOT/zsh_history
+HISTFILE=$ZSHRC_ROOT/zsh_history
 
 # メモリ上に保存するヒストリ数
 HISTSIZE=10000
