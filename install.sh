@@ -4,8 +4,9 @@ sudo locale-gen ja_JP.UTF-8
 
 # zsh
 if type zsh > /dev/null 2>&1; then
-  mkdir -p ~/.zinit
-  git clone https://github.com/zdharma-continuum/zinit.git ~/.zinit/bin
+  ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+  mkdir -p "$(dirname $ZINIT_HOME)"
+  git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
   ln -sf ~/dotfiles/zsh/zshrc ~/.zshrc
 fi
 

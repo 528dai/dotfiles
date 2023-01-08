@@ -3,7 +3,7 @@
 "" Fonts: "{{{
 set ambiwidth=double
 
-set guifont=Source\ Han\ Code\ JP:h15
+set guifont=HackGen\ Console\ NF:h18
 
 set background=dark
 "colorscheme hybrid_material
