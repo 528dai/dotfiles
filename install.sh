@@ -5,7 +5,7 @@ sudo locale-gen ja_JP.UTF-8
 # zsh
 if type zsh > /dev/null 2>&1; then
   mkdir -p ~/.zinit
-  git clone https://github.com/zdharma/zinit.git ~/.zinit/bin
+  git clone https://github.com/zdharma-continuum/zinit.git ~/.zinit/bin
   ln -sf ~/dotfiles/zsh/zshrc ~/.zshrc
 fi
 

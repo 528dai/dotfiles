@@ -10,9 +10,9 @@ bindkey -e  # キーバインドを上書きする関係でここ
 
 # Added by Zinit's installer
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
-    print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
+    print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
     command mkdir -p "$HOME/.zinit" && command chmod g-rwX "$HOME/.zinit"
-    command git clone https://github.com/zdharma/zinit "$HOME/.zinit/bin" && \
+    command git clone https://github.com/zdharma-continuum/zinit "$HOME/.zinit/bin" && \
         print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
         print -P "%F{160}▓▒░ The clone has failed.%f%b"
 fi
@@ -25,37 +25,37 @@ autoload -Uz _zinit
 
 # Plugins
 # color
-zinit light chrissicool/zsh-256color
+zinit light "chrissicool/zsh-256color"
 
 # fzf
-zinit ice wait lucid from"gh-r" as"program" id-as"fzf-bin"; zinit light junegunn/fzf
-zinit ice wait lucid src'shell/key-bindings.zsh'; zinit light junegunn/fzf
+zinit ice wait lucid as"command" src'shell/key-bindings.zsh'; zinit light "junegunn/fzf"
+zinit ice from"gh-r" as"program" id-as"fzf-bin"; zinit light "junegunn/fzf"
 
 # 補完
-zinit ice wait lucid; zinit light Aloxaf/fzf-tab
+zinit ice wait lucid; zinit light "Aloxaf/fzf-tab"
 # zsh-users/zsh-autosuggestions: 入力途中に候補をうっすら表示
 # zsh-users/zsh-syntax-highlighting: コマンドを種類ごとに色付け
 # zsh-users/zsh-history-substring-searc: ヒストリの補完を強化する
 zinit wait blockf lucid light-mode for \
-  zsh-users/zsh-completions \
-  zsh-users/zsh-autosuggestions \
-  zsh-users/zsh-syntax-highlighting \
-  zsh-users/zsh-history-substring-search \
+  "zsh-users/zsh-completions" \
+  "zsh-users/zsh-autosuggestions" \
+  "zsh-users/zsh-syntax-highlighting" \
+  "zsh-users/zsh-history-substring-search" \
 
 # シンタックスハイライト
-zinit ice wait lucid; zinit light zdharma/fast-syntax-highlighting
+zinit ice wait lucid; zinit light "zdharma-continuum/fast-syntax-highlighting"
 
 zinit light 'b4b4r07/easy-oneliner'
 
 # 見やすいcat
 zinit ice as"program" from"gh-r" mv"bat* -> bat" pick"bat/bat"
-zinit light sharkdp/bat
+zinit light "sharkdp/bat"
 
 # gitレポジトリをブラウザで開く
-zinit ice wait lucid; zinit light paulirish/git-open
+zinit ice wait lucid; zinit light "paulirish/git-open"
 
 # Theme
-zinit ice compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh'; zinit light sindresorhus/pure
+zinit ice compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh'; zinit light "sindresorhus/pure"
 #########################################################
 
 
@@ -81,9 +81,6 @@ source $ZSH_ROOT/rc/alias.zshrc
 if type tmux > /dev/null 2>&1; then
   export FZF_TMUX=1
 fi
-
-# enhanced
-# ENHANCD_DISABLE_HOME=1
 
 # easy-oneliner
 export EASY_ONE_REFFILE=$ZSH_ROOT/easy-oneliner.txt
