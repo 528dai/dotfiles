@@ -21,7 +21,3 @@ if type tmux > /dev/null 2>&1; then
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
   ln -sf ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
 fi
-
-# alacritty
-# ln -sf ~/dotfiles/alacritty/alacritty.yml ~/.alacritty.yml
-
