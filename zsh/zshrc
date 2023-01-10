@@ -9,6 +9,8 @@ autoload -Uz compinit && compinit
 # Emacs風のキーバインド
 bindkey -e  # キーバインドを上書きする関係でここ
 
+
+#########################################################
 # Added by Zinit's installer
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
     print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
@@ -26,14 +28,15 @@ autoload -Uz _zinit
 
 # Plugins
 # color
-zinit ice wait lucid; zinit light "chrissicool/zsh-256color"
+zinit wait lucid light-mode for "chrissicool/zsh-256color"
 
 # fzf
-zinit ice wait lucid as"command" src"shell/key-bindings.zsh"; zinit light "junegunn/fzf"
-zinit ice lucid from"gh-r" as"program" id-as"fzf-bin"; zinit light "junegunn/fzf"
+zinit lucid id-as"fzf-bin" from"gh-r" as"program" light-mode for "junegunn/fzf"
+zinit wait lucid id-as"fzf-key-bindings" as"command" src"shell/key-bindings.zsh" light-mode for "junegunn/fzf"
+zinit wait lucid id-as"fzf-tmux" as"command" pick"bin/fzf-tmux" light-mode for "junegunn/fzf"
+zinit wait lucid light-mode for "Aloxaf/fzf-tab"
 
 # 補完
-zinit ice wait lucid; zinit light "Aloxaf/fzf-tab"
 # zsh-users/zsh-autosuggestions: 入力途中に候補をうっすら表示
 # zsh-users/zsh-syntax-highlighting: コマンドを種類ごとに色付け
 # zsh-users/zsh-history-substring-searc: ヒストリの補完を強化する
@@ -43,10 +46,14 @@ zinit wait blockf lucid light-mode for \
   "zsh-users/zsh-syntax-highlighting" \
   "zsh-users/zsh-history-substring-search" \
 
-# シンタックスハイライト
-zinit ice wait lucid; zinit light "zdharma-continuum/fast-syntax-highlighting"
-
-zinit ice wait lucid; zinit light "b4b4r07/easy-oneliner"
+# 便利系
+# "zdharma-continuum/fast-syntax-highlighting": シンタックスハイライト
+# "b4b4r07/easy-oneliner": ワンライナーを便利にする
+# "paulirish/git-open": gitレポジトリをブラウザで開く
+zinit wait lucid light-mode for \
+  "zdharma-continuum/fast-syntax-highlighting" \
+  "b4b4r07/easy-oneliner" \
+  "paulirish/git-open" \
 
 # 見やすいls
 zinit ice lucid as"program" from"gh-r" pick"bin/exa"; zinit light "ogham/exa"
@@ -54,14 +61,11 @@ zinit ice lucid as"program" from"gh-r" pick"bin/exa"; zinit light "ogham/exa"
 # 見やすいcat
 zinit ice lucid as"program" from"gh-r" mv"bat* -> bat" pick"bat/bat"; zinit light "sharkdp/bat"
 
-# gitレポジトリをブラウザで開く
-zinit ice wait lucid; zinit light "paulirish/git-open"
-
 # Theme
-zinit ice lucid compile"(pure|async).zsh" pick"async.zsh" src"pure.zsh"; zinit light "sindresorhus/pure"
+zinit lucid compile"(pure|async).zsh" pick"async.zsh" src"pure.zsh" light-mode for "sindresorhus/pure"
+
+
 #########################################################
-
-
 # 環境変数
 source $ZSHRC_ROOT/rc/env.zshrc
 
@@ -87,6 +91,8 @@ fi
 
 # easy-oneliner
 export EASY_ONE_REFFILE=$ZSHRC_ROOT/easy-oneliner.txt
+
+
 #########################################################
 ## その他設定
 # プロンプトの色表示を有効にする
