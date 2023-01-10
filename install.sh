@@ -2,6 +2,8 @@
 
 sudo locale-gen ja_JP.UTF-8
 
+sudo apt install zsh
+
 # zsh
 if type zsh > /dev/null 2>&1; then
   ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
